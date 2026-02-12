@@ -31,14 +31,14 @@ print_section("Размер базы данных")
 rows, cols = df.shape
 print(f"Записей: {rows}, Колонок: {cols}")
 
-print_section("Проверка на ошибки (пропуски)")
+print_section("Проверка на ошибки")
 print(df.isna().sum()) 
 
 # ШАГ 4
 
 df = df.set_index('episode_id')
 
-print_section("Новый вид таблицы (индекс = ID случая)")
+print_section("Вид таблицы где 'индекс = ID случая'")
 print(df.head(3))
 
 df = df.reset_index().set_index('episode_id')
@@ -55,9 +55,9 @@ print_section("Группа риска: Старше 60 лет")
 print(df.query("age > 60"))
 
 print_section("Точечный поиск")
-print("👉 По ID 102 (loc):")
+print("По ID 102:")
 print(df.loc[102]) 
-print("\n👉 По номеру строки 1 (iloc):")
+print("\n По номеру строки 1:")
 print(df.iloc[1])
 
 # ШАГ 6
